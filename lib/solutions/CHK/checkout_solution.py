@@ -33,23 +33,23 @@ def checkout(skus):
                    'P': {'single_pricing': 50, 'multi_num': 5, 'multi_pricing': 200, 'extra': None, 'extra_num': None},
                    'Q': {'single_pricing': 30, 'multi_num': 3, 'multi_pricing': 80, 'extra': None, 'extra_num': None},
                    'R': {'single_pricing': 50, 'multi_num': 3, 'multi_pricing': 150, 'extra': 'Q', 'extra_num': 1},
-                   'S': 30,
+                   'S': 20,
                    'T': 20,
                    'U': {'single_pricing': 40, 'multi_num': 4, 'multi_pricing': 120, 'extra': None, 'extra_num': None},
                    'V': [{'single_pricing': 50,'multi_num': 3, 'multi_pricing': 130, 'extra': None, 'extra_num': None}, 
                          {'single_pricing': 50, 'multi_num': 2, 'multi_pricing': 90, 'extra': None, 'extra_num': None}],
                    'W': 20,
-                   'X': 90,
-                   'Y': 10,
-                   'Z': 50  
+                   'X': 17,
+                   'Y': 20,
+                   'Z': 21  
                          
                          
                          
                          
                          }
 
-    order = ['E','N','R','X','S','T','Y','Z', 'A','B','C','D','F','G','H','I','J','K','L','M','O','P','Q','U','V','W']
-
+    order = ['E','N','R','A','B','C','D','F','G','H','I','J','K','L','M','O','P','Q','U','V','W']
+    mix_n_match = ['Z','T','S','Y','X']
     for sku in order:
         pricing = price_model[sku]
         if basket_count[sku]<0:
@@ -72,8 +72,10 @@ def checkout(skus):
             total_val+= basket_count[sku]*price['single_pricing']
 
         if type(pricing)==int:
-
             total_val+= basket_count[sku]*pricing
+    
+    no_mix_n_match = sum([basket_count[sku] for sku in mix_n_match])
+    for sku in mix_n_match:
 
         
     return total_val
