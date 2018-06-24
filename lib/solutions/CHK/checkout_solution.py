@@ -75,15 +75,20 @@ def checkout(skus):
     for sku in mix_n_match:
         if items_in_deal+basket_count[sku]<no_mix_n_match_deals:
             deal_items = no_mix_n_match_deals-items_in_deal
+
             if deal_items > basket_count[sku]:
                 items_in_deal+=basket_count[sku]
             else:
                 basket_count[sku]-=deal_items
                 items_in_deal = no_mix_n_match_deals
+            print items_in_deal, sku 
         else:
+            print 'else'
             deal_items = no_mix_n_match_deals-items_in_deal
+            print deal_items
             total_val+=(basket_count[sku]-deal_items)*price_model[sku]
             total_val+=no_mix_n_match_deals/3*45
+            print sku
 
         
     return total_val
