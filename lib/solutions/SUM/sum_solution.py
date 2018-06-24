@@ -7,9 +7,10 @@ def compute(x, y):
             return 'hello'
         else:
             return x+y
-    except TypeError:
-        print 'x or y are not integers'
+    except TypeError as e:
+        raise e
+        print '{}: x or y are not integers'.format(e)
 
 
 if __name__ == '__main__':
-    print compute(1,2)
+    print compute(1,'2')
