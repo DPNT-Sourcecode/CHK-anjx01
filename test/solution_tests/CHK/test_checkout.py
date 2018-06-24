@@ -1,17 +1,20 @@
 import unittest
 
-from lib.solutions.HLO import hello_solution
+from lib.solutions.CHK import checkout_solution
 
 
 class TestHlo(unittest.TestCase):
-    def test_returns_string(self):
-        self.assertEqual(type(hello_solution.hello('abc')),str)
+    def test_multipricing(self):
+        self.assertEqual(checkout_solution.checkout('AAA'),130)
 
-    def test_input_string(self):
-        with self.assertRaises(TypeError):
-            hello_solution.hello(1)
+    def test_multiitems(self):
+        self.assertEqual(checkout_solution.checkout('ABCA'),150)
 
-    def test_ret_hlworld(self):
-        self.assertEqual(hello_solution.hello('John'),"Hello, John!")
+    # def test_input_string(self):
+    #     with self.assertRaises(TypeError):
+    #         hello_solution.hello(1)
+
+    # def test_ret_hlworld(self):
+    #     self.assertEqual(hello_solution.hello('John'),"Hello, John!")
 if __name__ == '__main__':
     unittest.main()
