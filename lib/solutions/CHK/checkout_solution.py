@@ -17,12 +17,15 @@ def checkout(skus):
                    'D': 15}
     for sku in basket_count:
         num_items = basket_count[sku]
-        if len(price_model[sku])==3:
-            total_val+= num_items/price_model['multi_num']*price_model['multi_pricing']+\
-            num_items%price_model['multi_num']*price_model['single_pricing']
+        pricing = price_model[sku]
+        if len(pricing)==3:
+            pricing = price_model[sku]
+            total_val+= num_items/pricing['multi_num']*pricing['multi_pricing']+\
+            num_items%pricing['multi_num']*pricing['single_pricing']
+        else:
+            total_val+= num_items*pricing
 
-
-
+        return total_val
 
 if __name__ == '__main__':
-    print checkout('AAAAAAAAAABBBCCCCBBBDDD')
+    print checkout('AAAAAAA')
