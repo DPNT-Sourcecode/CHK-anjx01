@@ -12,7 +12,7 @@ class TestSum(unittest.TestCase):
             sum_solution.compute(1,'2')
 
     def test_sum_float(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             sum_solution.compute(1,1.1)
 
 if __name__ == '__main__':
