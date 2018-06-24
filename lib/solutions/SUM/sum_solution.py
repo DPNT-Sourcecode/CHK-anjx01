@@ -12,6 +12,9 @@ def compute(x, y):
     except TypeError as e:
         raise e
         print '{}: x or y are not integers'.format(e)
+    except ValueError as e:
+        raise e
+        print '{}: x or y out of range 0-100'.format(e)
 
 
 if __name__ == '__main__':
