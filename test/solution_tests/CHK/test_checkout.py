@@ -12,6 +12,13 @@ class TestHlo(unittest.TestCase):
 
     def test_int(self):
         self.assertEqual(checkout_solution.checkout(123), -1)
+    
+    def test_list(self):
+        self.assertEqual(checkout_solution.checkout(['A']),-1)
+
+    def test_empty(self):
+        self.assertEqual(checkout_solution.checkout(),-1)
+
 
     # def test_input_string(self):
     #     with self.assertRaises(TypeError):

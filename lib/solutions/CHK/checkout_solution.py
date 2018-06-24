@@ -3,7 +3,8 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    skus = str(skus)
+    if not isinstance(skus,str):
+        return -1
     sku_set = set(skus)
     if sku_set.difference((['A', 'B', 'C', 'D'])):
         return -1
