@@ -45,7 +45,7 @@ def checkout(skus):
 
     order = ['E','N','R','A','B','C','D','F','G','H','I','J','K','L','M','O','P','Q','U','V','W']
     mix_n_match = ['Z','T','S','Y','X']
-    mix_n_match = ['Z', 'S']
+    #mix_n_match = ['Z','X' 'S']
     for sku in order:
         pricing = price_model[sku]
         if basket_count[sku]<0:
@@ -74,6 +74,17 @@ def checkout(skus):
     no_mix_n_match_deals = no_mix_n_match_items/3*3
     items_in_deal=0
     for sku in mix_n_match:
+        if items_in_deal<no_mix_n_match_deals:
+            if items_in_deal+basket_count[sku]<no_mix_n_match_deals:
+                items_in_deal+=basket_count[sku]
+            else:
+                basket_count[sku]-=no_mix_n_match_deals-items_in_deal
+                items_in_deal = no_mix_n_match_deals
+                total_val+= no_mix_n_match_deals/3*45
+        if items_in_deal==no_mix_n_match_deals:
+            total_val+= basket_count[sku]*price_model[sku]
+
+        
         # if items_in_deal+basket_count[sku]<no_mix_n_match_deals:
         #     deal_items = no_mix_n_match_deals-items_in_deal
 
