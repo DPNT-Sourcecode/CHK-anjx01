@@ -4,8 +4,10 @@ from lib.solutions.CHK import checkout_solution
 
 
 class TestHlo(unittest.TestCase):
-    def test_multipricing(self):
+    def test_1(self):
         self.assertEqual(checkout_solution.checkout(['AAAAAAAA']),330)
+    def test_2(self):
+        self.assertEqual(checkout_solution.checkout('BEE'),80)
 
 
 
