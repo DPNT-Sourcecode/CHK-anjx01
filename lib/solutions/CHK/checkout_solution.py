@@ -3,8 +3,8 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    if not isinstance(skus,str):
-        return -1
+    if type(skus)==list:
+        skus = ''.join(skus)
     sku_set = set(skus)
     if sku_set.difference((['A', 'B', 'C', 'D'])):
         return -1
@@ -33,4 +33,4 @@ def checkout(skus):
     return total_val
 
 if __name__ == '__main__':
-    print checkout('')
+    print checkout([''])
