@@ -48,7 +48,7 @@ def checkout(skus):
                          
                          }
 
-    order = ['E','N','R', 'A','B','C','D','F','G','H','I','J','K','L','M','O','P','Q','S','T','U','V','W','X','Y','Z']
+    order = ['E','N','R','X','S','T','Y','Z', 'A','B','C','D','F','G','H','I','J','K','L','M','O','P','Q','U','V','W']
 
     for sku in order:
         pricing = price_model[sku]
@@ -74,6 +74,8 @@ def checkout(skus):
         if type(pricing)==int:
 
             total_val+= basket_count[sku]*pricing
+
+        
     return total_val
 
 if __name__ == '__main__':
