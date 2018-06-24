@@ -12,6 +12,12 @@ class TestHlo(unittest.TestCase):
     def test_3(self):
         self.assertEqual(checkout_solution.checkout('FFF'),20)
 
+    def test_4(self):
+        self.assertEqual(checkout_solution.checkout('NNNM'),120)
+
+    def test_5(self):
+        self.assertEqual(checkout_solution.checkout('NNNM'),120)
+
 
 
 

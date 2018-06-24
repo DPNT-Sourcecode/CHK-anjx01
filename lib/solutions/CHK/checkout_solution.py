@@ -48,7 +48,7 @@ def checkout(skus):
                          
                          }
 
-    order = ['E','N', 'R' 'A','B','C','D','F']
+    order = ['E','N','R', 'A','B','C','D','F','G','H','I','J','K','L','M','O','P','Q','S','T','U','V','W','X','Y','Z']
 
     for sku in order:
         pricing = price_model[sku]
