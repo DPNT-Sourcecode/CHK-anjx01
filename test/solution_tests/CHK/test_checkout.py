@@ -16,8 +16,6 @@ class TestHlo(unittest.TestCase):
     def test_list(self):
         self.assertEqual(checkout_solution.checkout(['A']),-1)
 
-    def test_empty(self):
-        self.assertEqual(checkout_solution.checkout(),-1)
 
 
     # def test_input_string(self):
