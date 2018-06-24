@@ -23,11 +23,9 @@ def checkout(skus):
     order = ['E','A','B','C','D']
 
     for sku in basket_count:
-        num_items = basket_count[sku]
-        pricing = price_model[sku]
-
         if type(pricing)==dict:
-
+            num_items = basket_count[sku]
+            pricing = price_model[sku]
             pricing = price_model[sku]
             total_val+= num_items/pricing['multi_num']*pricing['multi_pricing']+\
             num_items%pricing['multi_num']*pricing['single_pricing']
@@ -35,6 +33,13 @@ def checkout(skus):
                 basket_count['extra']-= num_items/pricing['multi_num']
 
         if type(pricing)==list:
+            for price in pricing:
+                num_items = basket_count[sku]
+                pricing = price_model[sku]
+                total_val+= num_items/pricing['multi_num']*pricing['multi_pricing']
+                basket_count[sku]-=num_items/pricing['multi_num']
+            total_val+= num
+
 
         else:
 
