@@ -19,9 +19,36 @@ def checkout(skus):
                    'C': 20,
                    'D': 15,
                    'E': {'single_pricing': 40, 'multi_num':2, 'multi_pricing': 80, 'extra': 'B', 'extra_num': 1 },
-                   'F': {'single_pricing': 10, 'multi_num':3, 'multi_pricing': 20, 'extra': None, 'extra_num': None } }
+                   'F': {'single_pricing': 10, 'multi_num':3, 'multi_pricing': 20, 'extra': None, 'extra_num': None },
+                   'G': 20,
+                   'H': [{'single_pricing': 10,'multi_num': 10, 'multi_pricing': 80, 'extra': None, 'extra_num': None}, 
+                         {'single_pricing': 10, 'multi_num': 5, 'multi_pricing': 45, 'extra': None, 'extra_num': None}],
+                   'I': 35,
+                   'J': 60,
+                   'K': {'single_pricing': 80, 'multi_num': 2, 'multi_pricing': 150, 'extra': None, 'extra_num': None},
+                   'L': 90,
+                   'M': 15,
+                   'N': {'single_pricing': 40, 'multi_num':3, 'multi_pricing': 120, 'extra': 'M', 'extra_num': 1 },
+                   'O': 10,
+                   'P': {'single_pricing': 50, 'multi_num': 5, 'multi_pricing': 200, 'extra': None, 'extra_num': None},
+                   'Q': {'single_pricing': 30, 'multi_num': 3, 'multi_pricing': 80, 'extra': None, 'extra_num': None},
+                   'R': {'single_pricing': 50, 'multi_num': 3, 'multi_pricing': 150, 'extra': 'Q', 'extra_num': 1},
+                   'S': 30,
+                   'T': 20,
+                   'U': {'single_pricing': 40, 'multi_num': 4, 'multi_pricing': 120, 'extra': None, 'extra_num': None},
+                   'V': [{'single_pricing': 50,'multi_num': 3, 'multi_pricing': 130, 'extra': None, 'extra_num': None}, 
+                         {'single_pricing': 50, 'multi_num': 2, 'multi_pricing': 90, 'extra': None, 'extra_num': None}],
+                   'W': 20,
+                   'X': 90,
+                   'Y': 10,
+                   'Z': 5  
+                         
+                         
+                         
+                         
+                         }
 
-    order = ['E','A','B','C','D','F']
+    order = ['E','N', 'R' 'A','B','C','D','F']
 
     for sku in order:
         pricing = price_model[sku]
