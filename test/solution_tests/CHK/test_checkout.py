@@ -10,6 +10,9 @@ class TestHlo(unittest.TestCase):
     def test_multiitems(self):
         self.assertEqual(checkout_solution.checkout('ABCA'),150)
 
+    def test_int(self):
+        self.assertEqual(checkout_solution.checkout(123), -1)
+
     # def test_input_string(self):
     #     with self.assertRaises(TypeError):
     #         hello_solution.hello(1)
