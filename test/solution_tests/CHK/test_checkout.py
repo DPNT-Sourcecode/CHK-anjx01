@@ -5,16 +5,10 @@ from lib.solutions.CHK import checkout_solution
 
 class TestHlo(unittest.TestCase):
     def test_multipricing(self):
-        self.assertEqual(checkout_solution.checkout('AAA'),130)
+        self.assertEqual(checkout_solution.checkout(['AAAAAAAA']),330)
 
-    def test_multiitems(self):
-        self.assertEqual(checkout_solution.checkout('ABCA'),150)
 
-    def test_int(self):
-        self.assertEqual(checkout_solution.checkout(123), -1)
-    
-    def test_list(self):
-        self.assertEqual(checkout_solution.checkout(['A']),-1)
+
 
 
 
