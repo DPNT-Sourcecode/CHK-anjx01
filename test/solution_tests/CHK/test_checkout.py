@@ -9,6 +9,10 @@ class TestHlo(unittest.TestCase):
     def test_2(self):
         self.assertEqual(checkout_solution.checkout('BEE'),80)
 
+    def test_3(self):
+        self.assertEqual(checkout_solution.checkout('FFF'),20)
+
+
 
 
 

@@ -6,9 +6,9 @@ def checkout(skus):
     if type(skus)==list:
         skus = ''.join(skus)
     sku_set = set(skus)
-    if sku_set.difference((['A', 'B', 'C', 'D', 'E'])):
+    if sku_set.difference((['A', 'B', 'C', 'D', 'E', 'F'])):
         return -1
-    basket_count = {'A': 0, 'B': 0, 'C': 0, 'D':0, 'E':0}
+    basket_count = {'A': 0, 'B': 0, 'C': 0, 'D':0, 'E':0, 'F':0}
     for letter in skus:
         basket_count[letter]+=1
 
@@ -18,7 +18,8 @@ def checkout(skus):
                    'B': {'single_pricing': 30, 'multi_num': 2, 'multi_pricing': 45, 'extra': None, 'extra_num': None}, 
                    'C': 20,
                    'D': 15,
-                   'E': {'single_pricing': 40, 'multi_num':2, 'multi_pricing': 80, 'extra': 'B', 'extra_num': 1 }}
+                   'E': {'single_pricing': 40, 'multi_num':2, 'multi_pricing': 80, 'extra': 'B', 'extra_num': 1 },
+                   'F': {'single_pricing': 10, 'multi_num':3, 'multi_pricing': 20, 'extra': None, 'extra_num': None } }
 
     order = ['E','A','B','C','D']
 
@@ -49,4 +50,4 @@ def checkout(skus):
     return total_val
 
 if __name__ == '__main__':
-    print checkout('AAAAAEE')
+    print checkout('EE')
