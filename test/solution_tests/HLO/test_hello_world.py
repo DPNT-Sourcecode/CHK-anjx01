@@ -11,5 +11,7 @@ class TestHlo(unittest.TestCase):
         with self.assertRaises(TypeError):
             hello_solution.hello(1)
 
+    def test_ret_hlworld(self):
+        self.assertEqual(hello_solution.hello('abc'),"Hello, World!")
 if __name__ == '__main__':
     unittest.main()
