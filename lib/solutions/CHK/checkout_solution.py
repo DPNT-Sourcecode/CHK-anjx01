@@ -33,4 +33,4 @@ def checkout(skus):
     return total_val
 
 if __name__ == '__main__':
-    print checkout([''])
+    print checkout(['A'])
