@@ -26,7 +26,6 @@ def checkout(skus):
         pricing = price_model[sku]
 
         if type(pricing)==dict:
-            pricing = price_model[sku]
             total_val+= basket_count[sku]/pricing['multi_num']*pricing['multi_pricing']+\
             basket_count[sku]%pricing['multi_num']*pricing['single_pricing']
             if pricing['extra']:
@@ -38,7 +37,6 @@ def checkout(skus):
                 total_val+= basket_count[sku]/pricing['multi_num']*pricing['multi_pricing']
                 basket_count[sku]-=basket_count[sku]/pricing['multi_num']
             total_val+= basket_count[sku]*pricing['multi']
-
 
         else:
 
