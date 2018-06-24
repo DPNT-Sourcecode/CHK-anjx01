@@ -6,9 +6,9 @@ def checkout(skus):
     if type(skus)==list:
         skus = ''.join(skus)
     sku_set = set(skus)
-    if sku_set.difference((['A', 'B', 'C', 'D'])):
+    if sku_set.difference((['A', 'B', 'C', 'D', 'E'])):
         return -1
-    basket_count = {'A': 0, 'B': 0, 'C': 0, 'D':0}
+    basket_count = {'A': 0, 'B': 0, 'C': 0, 'D':0, 'E'}
     for letter in skus:
         basket_count[letter]+=1
 
@@ -22,7 +22,7 @@ def checkout(skus):
 
     order = ['E','A','B','C','D']
 
-    for sku in basket_count:
+    for sku in order:
         pricing = price_model[sku]
 
         if type(pricing)==dict:
@@ -33,16 +33,15 @@ def checkout(skus):
 
         if type(pricing)==list:
             for price in pricing:
-                pricing = price_model[sku]
-                total_val+= basket_count[sku]/pricing['multi_num']*pricing['multi_pricing']
-                basket_count[sku]-=basket_count[sku]/pricing['multi_num']
-            total_val+= basket_count[sku]*pricing['multi']
+                total_val+= basket_count[sku]/price['multi_num']*price['multi_pricing']
+                basket_count[sku]-=basket_count[sku]/price['multi_num']
+            total_val+= basket_count[sku]*price['single_pricing']
 
         else:
 
-            total_val+= num_items*pricing
+            total_val+= basket_count[sku]*pricing
 
     return total_val
 
 if __name__ == '__main__':
-    print checkout(['A'])
+    print checkout('A')
