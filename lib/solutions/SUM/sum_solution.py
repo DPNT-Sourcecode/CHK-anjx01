@@ -3,7 +3,7 @@
 # noinspection PyShadowingBuiltins,PyUnusedLocal
 def compute(x, y):
     try:
-        if (x or y) not in range(101):
+        if (x or y) not in range(101) or  (not isinstance(x,int) or not isinstance(y,int)) :
             raise ValueError
         else:
             return x+y
