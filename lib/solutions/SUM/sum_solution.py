@@ -4,7 +4,7 @@
 def compute(x, y):
     try:
         if (x or y) not in range(101):
-            return 'hello'
+            raise ValueError
         else:
             return x+y
     except TypeError as e:
