@@ -4,7 +4,8 @@
 # skus = unicode string
 def checkout(skus):
     sku_set = set(skus)
-    if sku_set!={'A', 'B', 'C', 'D'}:
+    print sku_set
+    if sku_set.difference((['A', 'B', 'C', 'D'])):
         return -1
     #raise NotImplementedError()
 
