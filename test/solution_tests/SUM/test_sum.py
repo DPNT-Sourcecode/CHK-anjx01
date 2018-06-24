@@ -8,7 +8,7 @@ class TestSum(unittest.TestCase):
         self.assertEqual(sum_solution.compute(1, 2), 3)
 
     def test_sum_string(self):
-        self.assertEqual(sum_solution.compute(1,'2'), 'x')
+        self.assertRaises(sum_solution.compute(1,'2'), TypeError)
 
 if __name__ == '__main__':
     unittest.main()

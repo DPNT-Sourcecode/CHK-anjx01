@@ -4,6 +4,6 @@
 def compute(x, y):
     try:
         return x+y
-    except ValueError:
-    raise NotImplementedError()
+    except TypeError:
+        raise NotImplementedError()
 
