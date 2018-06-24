@@ -18,6 +18,9 @@ class TestHlo(unittest.TestCase):
     def test_5(self):
         self.assertEqual(checkout_solution.checkout('HHHHHHHHHH'),80)
 
+    def test_6(self):
+        self.assertEqual(checkout_solution.checkout('SSTTXXYYZZ'),45*3+17)
+
 
 
 
