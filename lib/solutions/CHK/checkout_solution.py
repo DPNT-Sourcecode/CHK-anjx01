@@ -37,7 +37,8 @@ def checkout(skus):
             for price in pricing:
 
                 total_val+= basket_count[sku]/price['multi_num']*price['multi_pricing']
-                basket_count[sku]-=basket_count[sku]/price['multi_num']*basket_count[sku]
+
+                basket_count[sku]-=basket_count[sku]/price['multi_num']*price['multi_num']
 
             total_val+= basket_count[sku]*price['single_pricing']
 
@@ -47,4 +48,4 @@ def checkout(skus):
     return total_val
 
 if __name__ == '__main__':
-    print checkout('AAAAAAAAAA')
+    print checkout('AAAAAEE')
