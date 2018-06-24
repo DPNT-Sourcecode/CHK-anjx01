@@ -21,7 +21,7 @@ def checkout(skus):
                    'E': {'single_pricing': 40, 'multi_num':2, 'multi_pricing': 80, 'extra': 'B', 'extra_num': 1 },
                    'F': {'single_pricing': 10, 'multi_num':3, 'multi_pricing': 20, 'extra': None, 'extra_num': None } }
 
-    order = ['E','A','B','C','D']
+    order = ['E','A','B','C','D','F']
 
     for sku in order:
         pricing = price_model[sku]
