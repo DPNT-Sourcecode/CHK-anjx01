@@ -25,7 +25,7 @@ def checkout(skus):
                          {'single_pricing': 10, 'multi_num': 5, 'multi_pricing': 45, 'extra': None, 'extra_num': None}],
                    'I': 35,
                    'J': 60,
-                   'K': {'single_pricing': 80, 'multi_num': 2, 'multi_pricing': 150, 'extra': None, 'extra_num': None},
+                   'K': {'single_pricing': 70, 'multi_num': 2, 'multi_pricing': 120, 'extra': None, 'extra_num': None},
                    'L': 90,
                    'M': 15,
                    'N': {'single_pricing': 40, 'multi_num':3, 'multi_pricing': 120, 'extra': 'M', 'extra_num': 1 },
