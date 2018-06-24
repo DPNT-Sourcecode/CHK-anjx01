@@ -74,6 +74,7 @@ def checkout(skus):
     items_in_deal=0
     for sku in mix_n_match:
         if items_in_deal+basket_count[sku]<no_mix_n_match_deals:
+            deal_items = no_mix_n_match_deals-items_in_deal
             items_in_deal+=basket_count[sku]
         else:
             deal_items = no_mix_n_match_deals-items_in_deal
@@ -84,4 +85,4 @@ def checkout(skus):
     return total_val
 
 if __name__ == '__main__':
-    print checkout('EE')
+    print checkout('ZZZS')
