@@ -15,6 +15,11 @@ def checkout(skus):
                    'B': {'single_pricing': 30, 'multi_num': 2, 'multi_pricing': 45}, 
                    'C': 20,
                    'D': 15}
+    for sku in basket_count:
+        num_items = basket_count[sku]
+        if len(price_model[sku])==3:
+            total_val+= num_items/price_model['multi_num']*price_model['multi_pricing']+\
+            num_items%price_model['multi_num']*price_model['single_pricing']
 
 
 
