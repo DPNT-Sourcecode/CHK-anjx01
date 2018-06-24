@@ -13,11 +13,12 @@ def checkout(skus):
         basket_count[letter]+=1
 
     total_val = 0
-    price_model = {'A': {'single_pricing': 50, {'1': 'multi_num': 3, 'multi_pricing': 130},
-                                               {'2': 'multi_num': 5, 'multi_pricing': 200}},
-                   'B': {'single_pricing': 30, 'multi_num': 2, 'multi_pricing': 45}, 
+    price_model = {'A': {'single_pricing': 50,{'multi_num': 3, 'multi_pricing': 130, 'extra': None, 'extra_num': None},
+                                              {'multi_num': 5, 'multi_pricing': 200, 'extra': None, 'extra_num': None}},
+                   'B': {'single_pricing': 30, 'multi_num': 2, 'multi_pricing': 45, 'extra': None, 'extra_num': None}, 
                    'C': 20,
-                   'D': 15}
+                   'D': 15,
+                   'E': {'single_pricing': 40, {'multi_num':2, 'multi_pricing': 80, 'extra': 'B', 'extra_num': 1 }}}
 
     for sku in basket_count:
         num_items = basket_count[sku]
