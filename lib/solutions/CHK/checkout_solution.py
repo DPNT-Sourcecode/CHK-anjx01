@@ -24,7 +24,8 @@ def checkout(skus):
 
     for sku in order:
         pricing = price_model[sku]
-
+        if basket_count[sku]<0:
+            basket_count[sku]=0
         if type(pricing)==dict:
             total_val+= basket_count[sku]/pricing['multi_num']*pricing['multi_pricing']+\
             basket_count[sku]%pricing['multi_num']*pricing['single_pricing']
