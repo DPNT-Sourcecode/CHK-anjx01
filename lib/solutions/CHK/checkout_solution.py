@@ -41,12 +41,7 @@ def checkout(skus):
                    'W': 20,
                    'X': 17,
                    'Y': 20,
-                   'Z': 21  
-                         
-                         
-                         
-                         
-                         }
+                   'Z': 21}
 
     order = ['E','N','R','A','B','C','D','F','G','H','I','J','K','L','M','O','P','Q','U','V','W']
     mix_n_match = ['Z','T','S','Y','X']
@@ -75,7 +70,9 @@ def checkout(skus):
             total_val+= basket_count[sku]*pricing
     
     no_mix_n_match = sum([basket_count[sku] for sku in mix_n_match])
-    for sku in mix_n_match:
+    no_batch_mix_n_match = no_mix_n_match/3*3
+    #for sku in mix_n_match:
+
 
         
     return total_val
